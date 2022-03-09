@@ -1,0 +1,44 @@
+﻿@model WeatherMoscow.Entity.ViewModels.MonthWeatherViewModel
+
+@{
+    ViewData["Title"] = $"Weather for {Model.Month}";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">@Model.Month</h1>
+    </div>
+    <table class="table">
+        <tr>
+            <td>Дата</td>
+            <td>Время</td>
+            <td>Т</td>
+            <td>Отн. влажность воздуха %</td>
+            <td>Td</td>
+            <td>Атм. давление, мм рт.ст.</td>
+            <td>Направление ветра</td>
+            <td>Скорость ветра, м/с</td>
+            <td>Облачность%</td>
+            <td>h</td>
+            <td>VV</td>
+            <td>Погодные явления</td>
+        </tr>
+        @foreach (var weather in @Model.Weather)
+        {
+            <tr>
+                <td>@weather.Date.ToShortDateString()</td>
+                <td>@weather.Time.ToShortTimeString()</td>
+                <td>@weather.Temperature</td>
+                <td>@weather.Humidity</td>
+                <td>@weather.DewPoint</td>
+                <td>@weather.Mercury</td>
+                <td>@weather.DirectionOfWind</td>
+                <td>@weather.SpeedOfWind</td>
+                <td>@weather.Cloudiness</td>
+                <td>@weather.LowerCloudLimit</td>
+                <td>@weather.HorizontalVisibility</td>
+                <td>@weather.WeatherConditions</td>
+            </tr>
+        }
+    </table>
+</div>

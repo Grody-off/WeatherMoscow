@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+<div class="col-12 text-center">
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UploadData">
+        <div class="input-group">
+            <input type="file" name="files" class="form-control" multiple/>
+            <input type="submit" value="Upload" class="btn btn-primary"/>
+        </div>
+    </form>
+    <div class="input-group" style="height: 350px">
+        <form asp-action="GetAvailableYears" method="get" style="width: 100%">
+            <button class="btn btn-outline-danger justify-content-center main-btn">View archived data</button>
+        </form>
+    </div>
+</div>
+</div>

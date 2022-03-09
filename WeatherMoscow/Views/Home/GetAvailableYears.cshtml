@@ -1,0 +1,19 @@
+﻿@model System.Collections.Generic.List<int>
+
+@{
+    ViewData["Title"] = "Available year";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Available year for view</h1>
+    </div>
+    <div class="btn-toolbar block-center" role="toolbar">
+        <div class="btn-group" role="group" aria-label="Third group">
+            @foreach (var year in Model)
+            {
+                <a type="button" class="btn btn-secondary btn-lg" asp-controller="Home" asp-action="GetYearWeather" asp-route-year="@year">@year</a>
+            }
+        </div>
+    </div>
+</div>

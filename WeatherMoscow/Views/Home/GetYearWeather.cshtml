@@ -1,0 +1,26 @@
+﻿@model WeatherMoscow.Entity.ViewModels.YearWeatherViewModel
+
+@{
+    ViewData["Title"] = "Available year";
+}
+
+<table class="container">
+    <div class="text-center">
+        <h1 class="display-4">@Model.Year</h1>
+    </div>
+    <div class="col">
+        <div class="row">
+            @foreach (var month in Model.MonthWeather)
+            {
+                <div class="col-6 col-md-3 col-lg-4 mt-4">
+                    <div class="card">
+                        <a class="btn card-btn-size btn-success" style="padding-top: 9%;" asp-action="GetMonthWeather" asp-route-year="@Model.Year" asp-route-month="@month.Month">@month.Month</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col"> 
+        <a class="btn btn-success card-btn-size" style="padding-top: 3%; margin-top: 20px" asp-action="GetWeatherForYear" asp-route-year="@Model.Year">Check all information for year</a>
+    </div>
+</table>

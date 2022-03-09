@@ -1,0 +1,10 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Upload Page";
+}
+
+@foreach (var message in @Model)
+{
+    <div class="display-4"> @message</div>
+}
